@@ -20,6 +20,7 @@ namespace Kalkulacka_V6
         private void button1_Click(object sender, EventArgs e)
         {
             txtDisplay.Text = "ahoj světe";
+
         }
     }
 }
