@@ -17,10 +17,9 @@ namespace Kalkulacka_V6
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btCislo1_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text = "ahoj světe";
-
+            txtDisplay.Text = txtDisplay.Text + "1";
         }
     }
 }
