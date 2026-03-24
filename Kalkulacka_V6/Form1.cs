@@ -17,8 +17,18 @@ namespace Kalkulacka_V6
             InitializeComponent();
         }
 
+        //-------------------------------------------------------
+        // rutina obsluhuje stisky tlacitek cisel
+        //-------------------------------------------------------
         private void btCislo1_Click(object sender, EventArgs e)
         {
+            // test zda na diplay není nula
+            if (txtDisplay.Text == "0")
+            {
+                txtDisplay.Text = "";
+            }
+
+            // připojit stisknuté číslo na display
             txtDisplay.Text = txtDisplay.Text + "1";
         }
     }
