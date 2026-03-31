@@ -22,6 +22,10 @@ namespace Kalkulacka_V6
         //-------------------------------------------------------
         private void btCislo1_Click(object sender, EventArgs e)
         {
+            Button MojeTlacitko; ;
+
+            MojeTlacitko = (Button)sender;
+
             // test zda na diplay není nula
             if (txtDisplay.Text == "0")
             {
@@ -29,7 +33,15 @@ namespace Kalkulacka_V6
             }
 
             // připojit stisknuté číslo na display
-            txtDisplay.Text = txtDisplay.Text + "1";
+            txtDisplay.Text = txtDisplay.Text + MojeTlacitko.Text;
+        }
+
+        //-------------------------------------------------------
+        // vyčistit kalkulačku
+        //-------------------------------------------------------
+        private void btSmazat_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text = "0";
         }
     }
 }
