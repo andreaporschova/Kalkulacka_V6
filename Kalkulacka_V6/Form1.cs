@@ -12,9 +12,18 @@ namespace Kalkulacka_V6
 {
     public partial class Form1 : Form
     {
+        // operandy
+        double mdblCislo1,mdblCislo2, mdblVysledek;
+
+        //-------------------------------------------------------
+        // konstruktor
+        //-------------------------------------------------------
         public Form1()
         {
             InitializeComponent();
+
+            // nastavit kalkulačku do výchozího stavu
+            SmazatVse();
         }
 
         //-------------------------------------------------------
@@ -41,7 +50,45 @@ namespace Kalkulacka_V6
         //-------------------------------------------------------
         private void btSmazat_Click(object sender, EventArgs e)
         {
+            SmazatVse();
+        }
+
+        //-------------------------------------------------------
+        // vyčištění kalkulačky do základního stavu
+        //-------------------------------------------------------
+        private void SmazatVse()
+        {
             txtDisplay.Text = "0";
+            mdblVysledek = mdblCislo2 = mdblCislo1 = 0;
+        }
+
+        //-------------------------------------------------------
+        // ošetření zvolené operace
+        //-------------------------------------------------------
+        private void btOperace_Click(object sender, EventArgs e)
+        {
+            Button MojeTlacitko; ;
+
+            MojeTlacitko = (Button)sender;
+
+            ZapsatCisla();
+        }
+
+        //-------------------------------------------------------
+        // posunout a zapsat cisla
+        //-------------------------------------------------------
+        private void ZapsatCisla()
+        {
+            try
+            {
+                mdblCislo2 = mdblCislo1;
+                mdblCislo1 = Convert.ToDouble(txtDisplay.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Asi máš špatně číslo");
+                SmazatVse();
+            }
         }
     }
 }
